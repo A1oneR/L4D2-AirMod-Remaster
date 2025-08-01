@@ -1,0 +1,78 @@
+// Types
+// -----
+// center: Center message
+// chat: Chat message
+// hint: Hint message
+// menu: Menu message
+//
+// -----
+//	Following named colors are supported in L4D1/L4D2:
+//	 - {default}	(white color)
+//	 - {green}		(olive color)
+//	 - {olive}		(green color)
+//	 - {lightgreen}	(light green color)
+//	 - {red}		(red color)
+//	 - {blue}		(blue color)
+//	 Warning: {lightgreen}、{red}、{blue}, 2 of 3 colors can not be used at the same sentence
+
+// 中文說明
+// -----
+// center: 廣告文字顯示於螢幕中央
+// chat: 廣告文字顯示於聊天框
+// hint: 廣告文字顯示於螢幕下方黑底白字框
+// menu: 廣告文字顯示於Menu菜單
+//
+// -----
+//	以下顏色只支援於 L4D1/L4D2:
+//	 - {default}	(白色)
+//	 - {green}		(橘色)
+//	 - {olive}		(綠色)
+//	 - {lightgreen}	(淺綠色)
+//	 - {red}		(紅色)
+//	 - {blue}		(藍色)
+//	 注意事項: 藍色、紅色、淺綠色，這三種顏色不可出現在同一句話裡
+//
+
+"Advertisements"
+{
+    "1"
+    {
+         "chat"			"{lightgreen}没有浴火重生，有的只是腐竹重新白嫖到的服务器"
+    }
+	"2"
+    {
+        "chat"			"{lightgreen}使用{olive}!votes{lightgreen}打开投票菜单 使用{olive}!helpmenu{lightgreen}查看指令菜单"
+    }
+	"3"
+    {
+        "chat"			"{lightgreen}使用{olive}cl_interp 0;cl_interp_ratio 0 {lightgreen}使hitbox模型更加贴近玩家所看到的模型"
+    }
+	"4"
+    {
+        "chat"			"{lightgreen}跳拳倒地人，亲妈草上飞，恩怨私聊，勿扰群聊"
+    }
+	"5"
+    {
+        "chat"			"{lightgreen}第一次游玩对抗的萌新，不认路可以跟着队伍走哦~走队伍中间救救人，这样的话...尽管是杂鱼酱，你也是也是很棒的啦"
+    }
+    	"6"
+    {
+        "chat"			"{lightgreen}如果遇到了各类疑难杂症，QQ群778608959"
+    }
+	"7"
+    {
+        "chat"			"{lightgreen}什么？杂鱼君开无双不过瘾？来！聊天窗口输入{olive}!myfakelag 150{lightgreen}，体验极致的抖m乐趣"
+    }
+	"8"
+    {
+        "chat"			"{lightgreen}这机枪比步枪还疼"
+    }
+	"9"
+    {
+        "chat"			"{lightgreen}聊天窗口输入{olive}!rpg{lightgreen}使用角色技能万象天引！ "
+    }
+	"10"
+    {
+        "chat"			"{lightgreen}按h键加入本服steam组"
+    }
+}

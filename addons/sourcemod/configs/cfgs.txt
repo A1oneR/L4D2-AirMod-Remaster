@@ -1,0 +1,84 @@
+"Cfgs"
+{
+	"常用投票"
+	{
+		"sm_serverhp;sm_recover"
+		{
+   			"message" "全体回血"
+	 	}
+		"sm_cvar sv_alltalk 1"
+		{
+			"message" "打开全体语音"
+		}
+		"sm_cvar sv_alltalk 0"
+		{
+			"message" "关闭全体语音"
+		}
+		"sm_vms"
+		{
+			"message" "强制旁观"
+		}
+		"exec vote/HaveLobby.cfg"
+		{
+			"message" "开启大厅匹配（关了本节开）"
+		}
+		"exec vote/NoLobby.cfg"
+		{
+			"message" "关闭大厅匹配"
+		}
+		"exec vote/mod.cfg"
+		{
+			"message" "开启Mod"
+		}
+		"exec vote/nomod.cfg"
+		{
+			"message" "关闭Mod"
+		}
+	}
+	"不常用投票"
+	{
+		"sm_votekick"
+		{
+			"message" "投票踢人"
+		}
+		"sm_restartmap"
+		{
+			"message" "重启地图"
+		}
+		"sm_rs"
+		{
+			"message" "重启服务器"
+		}
+		"exec fun/bounce.cfg"
+		{
+			"message" "开启石头弹跳"
+		}
+		"exec fun/bounceoff.cfg"
+		{
+			"message" "关闭石头弹跳"
+		}
+		"exec fun/throw.cfg"
+		{
+			"message" "开启投掷草叉（中键）"
+		}
+		"exec fun/throwoff.cfg"
+		{
+			"message" "关闭投掷草叉"
+		}
+	}
+	"更换模式"
+	{
+		"exec match/tarot/sun.cfg"
+		{
+			"message" "Tarot Sun v1"
+		}
+		"exec match/tarot/moon.cfg"
+		{
+			"message" "Tarot Moon v1"
+		}
+		"exec match/zonemod/4v4.cfg"
+		{
+			"message" "Zone Mod 2.8.9"
+		}	
+	}
+}

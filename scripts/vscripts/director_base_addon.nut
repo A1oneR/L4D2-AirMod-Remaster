@@ -1,0 +1,1 @@
+IncludeScript("ktscript/runfast_cardgame/import");
