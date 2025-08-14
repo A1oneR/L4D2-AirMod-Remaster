@@ -41,7 +41,7 @@
     }
 	"2"
     {
-        "chat"			"{lightgreen}使用{olive}!votes{lightgreen}打开投票菜单 使用{olive}!helpmenu{lightgreen}查看指令菜单"
+        "chat"			"{lightgreen}使用{olive}!votes{lightgreen}打开投票菜单"
     }
 	"3"
     {
@@ -49,11 +49,11 @@
     }
 	"4"
     {
-        "chat"			"{lightgreen}跳拳倒地人，亲妈草上飞，恩怨私聊，勿扰群聊"
+        "chat"			"{lightgreen}如果你想要来骂腐竹，QQ群778608959"
     }
 	"5"
     {
-        "chat"			"{lightgreen}第一次游玩对抗的萌新，不认路可以跟着队伍走哦~走队伍中间救救人，这样的话...尽管是杂鱼酱，你也是也是很棒的啦"
+        "chat"			"{lightgreen}走路的时候要看路，要会用WASD，开枪要会使用左键，听懂鼓掌"
     }
     	"6"
     {
@@ -61,11 +61,11 @@
     }
 	"7"
     {
-        "chat"			"{lightgreen}什么？杂鱼君开无双不过瘾？来！聊天窗口输入{olive}!myfakelag 150{lightgreen}，体验极致的抖m乐趣"
+        "chat"			"{lightgreen}聊天窗口输入{olive}!myfakelag 150{lightgreen}，体验极致的抖m乐趣"
     }
 	"8"
     {
-        "chat"			"{lightgreen}这机枪比步枪还疼"
+        "chat"			"{lightgreen}这机枪比步枪还疼，有意见的话，QQ群778608959"
     }
 	"9"
     {
@@ -73,6 +73,6 @@
     }
 	"10"
     {
-        "chat"			"{lightgreen}按h键加入本服steam组"
+        "chat"			"{lightgreen}按h键加入本服steam组，QQ群778608959"
     }
 }

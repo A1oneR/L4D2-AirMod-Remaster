@@ -194,7 +194,7 @@ public Action CallSurrenderMenu(int client, int args)
 	if (electables > 0) //only do all that if there is someone to swap to
 	{
 		SetMenuExitButton(surrenderMenu, false);
-		//FakeClientCommand(primaryTankPlayer, "sm_tankhud");
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud off");
 		DisplayMenu(surrenderMenu, primaryTankPlayer, cvar_SurrenderTimeLimit.IntValue);
 	}
 	
@@ -224,7 +224,7 @@ public int TS_MenuCallBack(Handle menu, MenuAction action, int param1, int param
 		
 		if (!cvar_SurrenderGhostKill.IntValue && IsPlayerGhost(choice))
 			L4D2_SetPlayerZombieClass(primaryTankPlayer, L4D2_GetPlayerZombieClass(choice));
-		//FakeClientCommand(primaryTankPlayer, "sm_tankhud");
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud on");
 		int HP = GetEntProp(choice, Prop_Data, "m_iHealth");
 		SetEntProp(choice, Prop_Data, "m_iHealth", RoundToFloor(HP * cvar_Cost.FloatValue));
 		CPrintToChatAll("%T", "Random_Surrend", choice);
@@ -241,6 +241,7 @@ public int TS_MenuCallBack(Handle menu, MenuAction action, int param1, int param
 		
 		if (!cvar_SurrenderGhostKill.IntValue && IsPlayerGhost(choice))
 			L4D2_SetPlayerZombieClass(primaryTankPlayer, L4D2_GetPlayerZombieClass(choice));
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud on");
 		int HP = GetEntProp(choice, Prop_Data, "m_iHealth");
 		SetEntProp(choice, Prop_Data, "m_iHealth", RoundToFloor(HP * cvar_Cost.FloatValue));
 		CPrintToChatAll("%T", "Surrend", choice);
@@ -299,7 +300,7 @@ public Action TS_Display_Auto_MenuToTank(Handle timer, int clientid)
 	if (electables > 0) //only do all that if there is someone to swap to
 	{
 		SetMenuExitButton(surrenderMenu, false);
-		//FakeClientCommand(primaryTankPlayer, "sm_tankhud");
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud off");
 		DisplayMenu(surrenderMenu, primaryTankPlayer, 2 * cvar_SurrenderTimeLimit.IntValue);
 	}
 	
@@ -324,7 +325,7 @@ public int TS_Auto_MenuCallBack(Handle menu, MenuAction action, int param1, int 
 {
 	if (action == MenuAction_End) 
 	{
-		//FakeClientCommand(primaryTankPlayer, "sm_tankhud");
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud on");
 		CloseHandle(menu);
 	} 
 	
@@ -340,7 +341,7 @@ public int TS_Auto_MenuCallBack(Handle menu, MenuAction action, int param1, int 
 	int choice = StringToInt(number);
 	if (!choice) 
 	{
-		//FakeClientCommand(primaryTankPlayer, "sm_tankhud");
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud on");
 		//PrintToChatAll("\x04[Tank Swap]\x01 \x03%N\x01: I want to stay Tank\x01", primaryTankPlayer);
 		return 0; // "I want to stay Tank"
 	}
@@ -357,7 +358,7 @@ public int TS_Auto_MenuCallBack(Handle menu, MenuAction action, int param1, int 
 		}
 		L4D_ReplaceTank(primaryTankPlayer, choice);
 		
-		//FakeClientCommand(primaryTankPlayer, "sm_tankhud");
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud on");
 		int HP = GetEntProp(choice, Prop_Data, "m_iHealth");
 		SetEntProp(choice, Prop_Data, "m_iHealth", RoundToFloor(HP * cvar_Cost.FloatValue));
 		CPrintToChatAll("%t", "Random_Surrend", choice);
@@ -374,7 +375,7 @@ public int TS_Auto_MenuCallBack(Handle menu, MenuAction action, int param1, int 
 		}
 		L4D_ReplaceTank(primaryTankPlayer, choice);
 		
-		//FakeClientCommand(primaryTankPlayer, "sm_tankhud");
+		FakeClientCommand(primaryTankPlayer, "sm_tankhud on");
 		int HP = GetEntProp(choice, Prop_Data, "m_iHealth");
 		SetEntProp(choice, Prop_Data, "m_iHealth", RoundToFloor(HP * cvar_Cost.FloatValue));
 		CPrintToChatAll("%t", "Surrend", choice);
