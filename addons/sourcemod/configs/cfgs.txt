@@ -80,5 +80,9 @@
 		{
 			"message" "Zone Mod 2.8.9"
 		}	
+		"exec match/tarot/zmwp.cfg"
+		{
+			"message" "Witch Party+ 1.0.8"
+		}	
 	}
 }

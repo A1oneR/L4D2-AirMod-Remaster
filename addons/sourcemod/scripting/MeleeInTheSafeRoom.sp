@@ -20,6 +20,9 @@ new Handle:g_hWeaponKatana;
 new Handle:g_hWeaponMachete;
 new Handle:g_hWeaponRiotShield;
 new Handle:g_hWeaponTonfa;
+new Handle:g_hWeaponPitchfork;
+new Handle:g_hWeaponShovel;
+new Handle:g_hWeaponMagnum;
 
 new bool:g_bSpawnedMelee;
 
@@ -59,14 +62,18 @@ public OnPluginStart()
     g_hWeaponKatana         = CreateConVar( "l4d2_MITSR_Katana",        "1", "Number of katanas to spawn (l4d2_MITSR_Random must be 0)");
     g_hWeaponMachete            = CreateConVar( "l4d2_MITSR_Machete",       "1", "Number of machetes to spawn (l4d2_MITSR_Random must be 0)");
     g_hWeaponRiotShield     = CreateConVar( "l4d2_MITSR_RiotShield",    "1", "Number of riot shields to spawn (l4d2_MITSR_Random must be 0)");
+    g_hWeaponPitchfork            = CreateConVar( "l4d2_MITSR_Pitchfork",       "1", "Number of pitchforks to spawn (l4d2_MITSR_Random must be 0)");
+    g_hWeaponShovel     = CreateConVar( "l4d2_MITSR_Shovel",    "1", "Number of shovels to spawn (l4d2_MITSR_Random must be 0)");
     g_hWeaponTonfa          = CreateConVar( "l4d2_MITSR_Tonfa",     "1", "Number of tonfas to spawn (l4d2_MITSR_Random must be 0)");
+	
+    g_hWeaponMagnum          = CreateConVar( "l4d2_MITSR_Magnum",     "1", "Number of Magnum to spawn (l4d2_MITSR_Random must be 0)");
     
     HookEvent( "round_start", Event_RoundStart );
     
     RegAdminCmd("sm_melee", Command_SMMelee, ADMFLAG_KICK, "Lists all melee weapons spawnable in current campaign" );
 }
 
-Action:Command_SMMelee(client, args)
+public Action:Command_SMMelee(client, args)
 {
     for( new i = 0; i < g_iMeleeClassCount; i++ )
     {
@@ -86,6 +93,9 @@ public OnMapStart()
     PrecacheModel( "models/weapons/melee/v_katana.mdl", true );
     PrecacheModel( "models/weapons/melee/v_machete.mdl", true );
     PrecacheModel( "models/weapons/melee/v_tonfa.mdl", true );
+    PrecacheModel( "models/v_models/v_knife_t.mdl", true );
+    PrecacheModel( "models/weapons/melee/v_pitchfork.mdl", true );
+    PrecacheModel( "models/weapons/melee/v_shovel.mdl", true );
     
     PrecacheModel( "models/weapons/melee/w_bat.mdl", true );
     PrecacheModel( "models/weapons/melee/w_cricket_bat.mdl", true );
@@ -97,8 +107,11 @@ public OnMapStart()
     PrecacheModel( "models/weapons/melee/w_katana.mdl", true );
     PrecacheModel( "models/weapons/melee/w_machete.mdl", true );
     PrecacheModel( "models/weapons/melee/w_tonfa.mdl", true );
-    PrecacheModel( "models/w_models/weapons/w_sniper_scout.mdl");
-    PrecacheModel( "models/v_models/v_snip_scout.mdl");
+    PrecacheModel( "models/w_models/weapons/w_knife_t.mdl", true );
+    PrecacheModel( "models/w_models/weapons/w_desert_eagle.mdl");
+    PrecacheModel( "models/v_models/v_desert_eagle.mdl");
+    PrecacheModel( "models/weapons/melee/w_pitchfork.mdl", true );
+    PrecacheModel( "models/weapons/melee/w_shovel.mdl", true );
     
     PrecacheGeneric( "scripts/melee/baseball_bat.txt", true );
     PrecacheGeneric( "scripts/melee/cricket_bat.txt", true );
@@ -108,15 +121,19 @@ public OnMapStart()
     PrecacheGeneric( "scripts/melee/frying_pan.txt", true );
     PrecacheGeneric( "scripts/melee/golfclub.txt", true );
     PrecacheGeneric( "scripts/melee/katana.txt", true );
+    PrecacheGeneric( "scripts/melee/knife.txt", true );
     PrecacheGeneric( "scripts/melee/machete.txt", true );
     PrecacheGeneric( "scripts/melee/tonfa.txt", true );
+    PrecacheGeneric( "scripts/melee/shovel.txt", true );
+    PrecacheGeneric( "scripts/melee/pitchfork.txt", true );
+	
 
-    new index = CreateEntityByName("weapon_sniper_scout");
+    new index = CreateEntityByName("weapon_pistol_magnum");
     DispatchSpawn(index);
     RemoveEdict(index);
 }
 
-Action:Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast)
+public Action:Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast)
 {
     if( !GetConVarBool( g_hEnabled ) ) return Plugin_Continue;
     
@@ -131,7 +148,7 @@ Action:Event_RoundStart(Handle:event, const String:name[], bool:dontBroadcast)
     return Plugin_Continue;
 }
 
-Action:Timer_SpawnMelee( Handle:timer )
+public Action:Timer_SpawnMelee( Handle:timer )
 {
     new client = GetInGameClient();
 
@@ -245,7 +262,7 @@ stock SpawnCustomList( Float:Position[3], Float:Angle[3] )
     {
         for( new i = 0; i < GetConVarInt( g_hWeaponKnife ); i++ )
         {
-            GetScriptName( "hunting_knife", ScriptName );
+            GetScriptName( "knife", ScriptName );
             SpawnMelee( ScriptName, Position, Angle );
         }
     }
@@ -289,6 +306,35 @@ stock SpawnCustomList( Float:Position[3], Float:Angle[3] )
             SpawnMelee( ScriptName, Position, Angle );
         }
     }
+	
+	//Spawn Pitchforks
+    if( GetConVarInt( g_hWeaponPitchfork ) > 0 )
+    {
+        for( new i = 0; i < GetConVarInt( g_hWeaponPitchfork ); i++ )
+        {
+            GetScriptName( "pitchfork", ScriptName );
+            SpawnMelee( ScriptName, Position, Angle );
+        }
+    }
+	
+	//Spawn shovels
+    if( GetConVarInt( g_hWeaponShovel ) > 0 )
+    {
+        for( new i = 0; i < GetConVarInt( g_hWeaponShovel ); i++ )
+        {
+            GetScriptName( "shovel", ScriptName );
+            SpawnMelee( ScriptName, Position, Angle );
+        }
+    }
+	
+	//Spawn Magnum
+    if( GetConVarInt( g_hWeaponMagnum ) > 0 )
+    {
+        for( new i = 0; i < GetConVarInt( g_hWeaponMagnum ); i++ )
+        {
+            SpawnScout( Position, Angle );
+        }
+    }
 }
 
 stock SpawnMelee( const String:Class[32], Float:Position[3], Float:Angle[3] )
@@ -319,7 +365,7 @@ stock SpawnScout(Float:Position[3], Float:Angle[3])
     SpawnPosition[2] += GetRandomInt( 0, 10 );
     SpawnAngle[1] = GetRandomFloat( 0.0, 360.0 );
 
-    new Spawn = CreateEntityByName("weapon_sniper_scout");
+    new Spawn = CreateEntityByName("weapon_pistol_magnum");
     DispatchSpawn(Spawn);
     TeleportEntity(Spawn, SpawnPosition, SpawnAngle, NULL_VECTOR );
 }
