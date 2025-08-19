@@ -70,11 +70,11 @@
 	{
 		"exec match/tarot/sun.cfg"
 		{
-			"message" "Tarot Sun v1"
+			"message" "Tarot Sun v1（包）"
 		}
 		"exec match/tarot/moon.cfg"
 		{
-			"message" "Tarot Moon v1"
+			"message" "Tarot Moon v1（药）"
 		}
 		"exec match/zonemod/4v4.cfg"
 		{
@@ -84,5 +84,9 @@
 		{
 			"message" "Witch Party+ 1.0.8"
 		}	
+		"exec match/tarot/hermit.cfg"
+		{
+			"message" "Tarot Hermit v1（写）"
+		}
 	}
 }
