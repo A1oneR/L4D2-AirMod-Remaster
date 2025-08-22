@@ -81,7 +81,7 @@
 		"max_distance"		"800"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 		"horde_tank"		"1"
 	}
@@ -187,7 +187,7 @@
 		"end_dist"			"150.000000"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
 	"c3m1_plankcountry"
@@ -241,7 +241,7 @@
 		"end_dist"			"200.000000"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
 	"c4m1_milltown_a"
@@ -338,7 +338,7 @@
 		"max_distance"		"400"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
 	"c5m1_waterfront"
@@ -476,7 +476,7 @@
 		"end_dist"			"50.000000"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
 	"c7m1_docks"
@@ -514,7 +514,7 @@
 		"max_distance"		"700"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
 	"c8m1_apartment"
@@ -609,7 +609,7 @@
 		"end_dist"			"100.000000"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 		"tank_ban_flow"
 		{
@@ -639,7 +639,7 @@
 		"max_distance"		"800"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"6"
 		}
 	}
 	"c10m1_caves"
@@ -720,7 +720,7 @@
 		"end_dist"			"795.922058"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
 	"c11m1_greenhouse"
@@ -774,7 +774,7 @@
 		"end_dist"			"538.437988"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
 	"c12m1_hilltop"
@@ -844,7 +844,7 @@
 		"end_dist"			"183.031281"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 		"tank_ban_flow"
 		{
@@ -931,7 +931,7 @@
 		"end_dist"			"500.000000"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"6"
 		}
 		"tank_ban_flow"
 		{
