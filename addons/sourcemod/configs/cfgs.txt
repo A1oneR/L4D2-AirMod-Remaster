@@ -65,6 +65,14 @@
 		{
 			"message" "关闭投掷草叉"
 		}
+		"exec fun/aion.cfg"
+		{
+			"message" "开启超雄生还特感AI"
+		}
+		"exec fun/aioff.cfg"
+		{
+			"message" "关闭超雄生还特感AI"
+		}
 	}
 	"更换模式"
 	{
